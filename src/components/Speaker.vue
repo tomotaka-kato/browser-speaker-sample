@@ -6,7 +6,7 @@
                     <v-text-field
                         clearable=true
                         v-model="message"
-                        hint="発話させたい文言を入力してください"
+                        placeholder="発話させたい文言を入力してください"
                         >
                     </v-text-field>
                     <v-btn fab color=primary @click="speak">
