@@ -2,10 +2,11 @@
     <v-app id="inspire">
         <v-container fluid grid-list-md>
             <v-layout row wrap>
-                <v-flex xs12 md5>
+                <v-flex class="text-xs-center" xs12 md5>
                     <v-text-field
                         clearable=true
                         v-model="message"
+                        hint="発話させたい文言を入力してください"
                         >
                     </v-text-field>
                     <v-btn fab color=primary @click="speak">
@@ -20,7 +21,6 @@
                            min=0
                            max=1
                            step=0.1
-                           :value="volume"
                        >
                        </v-slider> 
                         <!-- 
