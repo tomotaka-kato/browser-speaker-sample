@@ -1,6 +1,6 @@
 <template>
     <v-app id="inspire">
-        <v-container fluid grid-list-md>
+        <v-container>
             <v-layout row wrap>
                 <v-flex class="text-xs-center" xs12 md5>
                     <v-text-field
@@ -13,8 +13,6 @@
                         <v-icon dark>volume_up</v-icon>
                     </v-btn>
                 </v-flex>
-
-                    
 
             </v-layout>
         </v-container>
