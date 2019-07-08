@@ -48,6 +48,7 @@
                        </v-slider> 
                 </v-flex>
 
+                <!--
                 <v-flex xs12 v-if="errorMsg.length > 0">
                     <v-card>
                         <v-card-title primary-title>
@@ -58,6 +59,7 @@
                         </v-card-title>
                     </v-card>
                 </v-flex>
+                -->
                     
 
             </v-layout>
