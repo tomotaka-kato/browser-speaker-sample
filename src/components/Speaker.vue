@@ -87,7 +87,9 @@
                 this.msg.rate = this.rate;
                 this.msg.pitch = this.pitch
                 this.msg.lang = 'ja-JP'
-                this.msg.text = this.message
+                this.message.length > 0
+                    ? this.msg.text = this.message
+                    : this.msg.text = "サンプルメッセージです"
 
                 console.log(`rate: ${this.rate}`)
                 console.log(`pitch: ${this.pitch}`)
