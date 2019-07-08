@@ -1,21 +1,6 @@
 <template>
     <v-app id="inspire">
-        <v-container>
-            <v-layout row wrap>
-                <v-flex class="text-xs-center" xs12 md5>
-                    <v-text-field
-                        clearable
-                        v-model="message"
-                        placeholder="発話させたい文言を入力してください"
-                        >
-                    </v-text-field>
-                    <v-btn fab color=primary @click="speak">
-                        <v-icon dark>volume_up</v-icon>
-                    </v-btn>
-                </v-flex>
-
-            </v-layout>
-        </v-container>
+        <p>{{message}}</p>
     </v-app>
 </template>
 
