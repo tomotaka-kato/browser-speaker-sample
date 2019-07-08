@@ -23,11 +23,6 @@
                            step=0.1
                        >
                        </v-slider> 
-                        <!-- 
-                            速度の最大は10とAPI使用には書いてあるが、
-                            試した感じ3.6を越えると正常に動かなかったため、
-                            3.5を最大とする。
-                        -->
                        <v-slider
                            label="速度"
                            v-model="rate"
@@ -48,7 +43,7 @@
                        </v-slider> 
                 </v-flex>
 
-                <v-flex xs12 v-if="errorMsg.length > 0">
+                <v-flex xs12>
                     <v-card>
                         <v-card-title primary-title>
                             <div>
@@ -58,6 +53,7 @@
                         </v-card-title>
                     </v-card>
                 </v-flex>
+
                     
 
             </v-layout>
@@ -71,16 +67,16 @@
     @Component
     export default class Speaker extends Vue{
 
-        // errorMsg: string = "aaa";
+        errorMsg: string = "aaa";
         msg = new SpeechSynthesisUtterance();
 
         message: string = "test"
-        volume = 1.0; // 音量 min 0 ~ max 1
-        rate = 1.0; // 速度 min 0 ~ max 10
-        pitch = 1.0; // 音程 min 0 ~ max 2
+        volume = 1.0;
+        rate = 1.0;
+        pitch = 1.0;
 
         speak() {
-            // try {
+            try {
                 if(!this.msg.voice){
                     const voices = speechSynthesis.getVoices();
                     const voice = voices.find(_ => _.lang === 'ja-JP')
@@ -93,16 +89,16 @@
                 this.msg.lang = 'ja-JP'
                 this.msg.text = this.message
 
-                // console.log(`rate: ${this.rate}`)
-                // console.log(`pitch: ${this.pitch}`)
-                // console.log("")
+                console.log(`rate: ${this.rate}`)
+                console.log(`pitch: ${this.pitch}`)
+                console.log("")
 
                 speechSynthesis.speak(this.msg)
-                // this.errorMsg = "";
-            // } catch(e) {
-              //   console.error(e)
-                // this.errorMsg = e.toString()
-            // }
+                this.errorMsg = "";
+            } catch(e) {
+                console.error(e)
+                this.errorMsg = e.toString()
+            }
         }
     }
 </script>
