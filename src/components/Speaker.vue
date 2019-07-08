@@ -14,52 +14,6 @@
                     </v-btn>
                 </v-flex>
 
-                <!--
-                <v-flex xs12 md5 >
-                       <v-slider
-                           label="音量"
-                           v-model="volume"
-                           min=0
-                           max=1
-                           step=0.1
-                       >
-                       </v-slider> 
-                        <!-- 
-                            速度の最大は10とAPI使用には書いてあるが、
-                            試した感じ3.6を越えると正常に動かなかったため、
-                            3.5を最大とする。
-                        -->
-                       <v-slider
-                           label="速度"
-                           v-model="rate"
-                           min=0.1
-                           max=3.5
-                           step=0.1
-                           :value="rate"
-                       >
-                       </v-slider> 
-                       <v-slider
-                           label="音程"
-                           v-model="pitch"
-                           min=0
-                           max=2
-                           step=0.1
-                           :value="pitch"
-                       >
-                       </v-slider> 
-                </v-flex>
-
-                <v-flex xs12 v-if="errorMsg.length > 0">
-                    <v-card>
-                        <v-card-title primary-title>
-                            <div>
-                                <h3 class="headline mb-0">エラーメッセージ</h3>
-                                <div> {{ errorMsg }} </div>
-                            </div>
-                        </v-card-title>
-                    </v-card>
-                </v-flex>
-                -->
                     
 
             </v-layout>
