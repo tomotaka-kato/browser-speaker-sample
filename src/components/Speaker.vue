@@ -1,7 +1,7 @@
 <template>
-    <v-app id="inspire">
-        <p>{{message}}</p>
-    </v-app>
+    <div>
+        {{ message }}
+    </div>
 </template>
 
 <script lang="ts">
