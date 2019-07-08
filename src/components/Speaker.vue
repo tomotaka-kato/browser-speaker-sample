@@ -63,10 +63,10 @@
     @Component
     export default class Speaker extends Vue{
 
-        errorMsg: string = "aaa";
+        errorMsg: string = "";
         msg = new SpeechSynthesisUtterance();
 
-        message: string = "test"
+        message: string = ""
         volume = 1.0;
         rate = 1.0;
         pitch = 1.0;
