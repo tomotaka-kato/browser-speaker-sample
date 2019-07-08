@@ -1,6 +1,5 @@
 <template>
-    <v-app id="inspire">
-        <v-container>
+    <v-app id="inspire"> <v-container>
             <v-layout row wrap>
                 <v-flex class="text-xs-center" xs12 md5>
                     <v-text-field
@@ -43,7 +42,7 @@
                        </v-slider> 
                 </v-flex>
 
-                <v-flex xs12>
+                    <v-flex xs12 v-if="errorMsg.length > 0">
                     <v-card>
                         <v-card-title primary-title>
                             <div>
