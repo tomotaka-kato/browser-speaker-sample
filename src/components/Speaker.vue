@@ -93,6 +93,9 @@
                 this.msg.lang = 'ja-JP'
                 this.msg.text = this.message
 
+                console.log(`pitch: ${this.pitch}`)
+                console.log(`rate: ${this.rate}`)
+
                 speechSynthesis.speak(this.msg)
                 this.errorMsg = "";
             } catch(e) {
