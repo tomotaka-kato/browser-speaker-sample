@@ -41,7 +41,7 @@
             </v-slider> 
         </v-flex>
 
-            <v-flex xs10 md11 v-if="errorMsg.length > 0" >
+            <v-flex xs10 md11 >
                 <v-card>
                     <v-card-title primary-title>
                         <div>
