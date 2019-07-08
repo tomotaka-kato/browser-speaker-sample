@@ -14,6 +14,7 @@
                     </v-btn>
                 </v-flex>
 
+                <!--
                 <v-flex xs12 md5 >
                        <v-slider
                            label="音量"
@@ -48,7 +49,6 @@
                        </v-slider> 
                 </v-flex>
 
-                <!--
                 <v-flex xs12 v-if="errorMsg.length > 0">
                     <v-card>
                         <v-card-title primary-title>
