@@ -1,6 +1,6 @@
 <template>
     <v-layout row wrap>
-        <v-flex class="text-xs-center" xs12 md5>
+        <v-flex class="text-xs-center" xs10 md5>
             <v-text-field
                 clearable
                 v-model="message"
@@ -12,7 +12,7 @@
                 </v-btn>
         </v-flex>
 
-        <v-flex xs12 md5 >
+        <v-flex xs10 md5 >
             <v-slider
                 label="音量"
                 v-model="volume"
