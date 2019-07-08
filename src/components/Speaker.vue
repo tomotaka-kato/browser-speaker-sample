@@ -4,7 +4,7 @@
             <v-layout row wrap>
                 <v-flex class="text-xs-center" xs12 md5>
                     <v-text-field
-                        clearable=true
+                        clearable
                         v-model="message"
                         placeholder="発話させたい文言を入力してください"
                         >
@@ -47,6 +47,19 @@
                        >
                        </v-slider> 
                 </v-flex>
+
+                <v-flex xs12 v-if="errorMsg.length > 0">
+                    <v-card>
+                        <v-card-title primary-title>
+                            <div>
+                                <h3 class="headline mb-0">エラーメッセージ</h3>
+                                <div> {{ errorMsg }} </div>
+                            </div>
+                        </v-card-title>
+                    </v-card>
+                </v-flex>
+                    
+
             </v-layout>
         </v-container>
     </v-app>
@@ -57,6 +70,8 @@
 
     @Component
     export default class Speaker extends Vue{
+
+        errorMsg: string = "";
         msg = new SpeechSynthesisUtterance();
 
         message: string = ""
@@ -65,21 +80,25 @@
         pitch = 1.0; // 音程 min 0 ~ max 2
 
         speak() {
-            if(!this.msg.voice){
-                const voices = speechSynthesis.getVoices();
-                const voice = voices.find(_ => _.lang === 'ja-JP')
-                if(voice)
-                    this.msg.voice = voice;
+            try {
+                if(!this.msg.voice){
+                    const voices = speechSynthesis.getVoices();
+                    const voice = voices.find(_ => _.lang === 'ja-JP')
+                    if(voice)
+                        this.msg.voice = voice;
+                }
+                this.msg.volume = this.volume;
+                this.msg.rate = this.rate;
+                this.msg.pitch = this.pitch
+                this.msg.lang = 'ja-JP'
+                this.msg.text = this.message
+
+                speechSynthesis.speak(this.msg)
+                this.errorMsg = "";
+            } catch(e) {
+                console.error(e)
+                this.errorMsg = e.toString()
             }
-            this.msg.volume = this.volume;
-            this.msg.rate = this.rate;
-            this.msg.pitch = this.pitch
-            this.msg.lang = 'ja-JP'
-            this.msg.text = this.message
-
-            console.log(this.msg)
-
-            speechSynthesis.speak(this.msg)
         }
     }
 </script>
