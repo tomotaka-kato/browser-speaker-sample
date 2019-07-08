@@ -21,27 +21,27 @@
                 step=0.1
                 >
             </v-slider> 
-                <v-slider
-                    label="速度"
-                    v-model="rate"
-                    min=0.1
-                    max=3.5
-                    step=0.1
-                    :value="rate"
-                    >
-                </v-slider> 
-                    <v-slider
-                        label="音程"
-                        v-model="pitch"
-                        min=0
-                        max=2
-                        step=0.1
-                        :value="pitch"
-                        >
-                    </v-slider> 
+            <v-slider
+                label="速度"
+                v-model="rate"
+                min=0.1
+                max=3.5
+                step=0.1
+                :value="rate"
+                >
+            </v-slider> 
+            <v-slider
+                label="音程"
+                v-model="pitch"
+                min=0
+                max=2
+                step=0.1
+                :value="pitch"
+                >
+            </v-slider> 
         </v-flex>
 
-            <v-flex xs10 md11 >
+            <v-flex xs10 md11 v-if="errorMsg.length > 0" >
                 <v-card>
                     <v-card-title primary-title>
                         <div>
