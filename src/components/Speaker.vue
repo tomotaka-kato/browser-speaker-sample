@@ -93,9 +93,9 @@
                 this.msg.lang = 'ja-JP'
                 this.msg.text = this.message
 
-                console.log(`rate: ${this.rate}`)
-                console.log(`pitch: ${this.pitch}`)
-                console.log("")
+                // console.log(`rate: ${this.rate}`)
+                // console.log(`pitch: ${this.pitch}`)
+                // console.log("")
 
                 speechSynthesis.speak(this.msg)
                 this.errorMsg = "";
