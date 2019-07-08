@@ -1,5 +1,5 @@
 <template>
-    <v-layout row wrap>
+    <v-layout row wrap justify-space-around >
         <v-flex class="text-xs-center" xs10 md5>
             <v-text-field
                 clearable
@@ -41,7 +41,7 @@
                     </v-slider> 
         </v-flex>
 
-            <v-flex xs12 >
+            <v-flex xs10 md11 >
                 <v-card>
                     <v-card-title primary-title>
                         <div>
